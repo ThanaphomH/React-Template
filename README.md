@@ -18,6 +18,14 @@ This project uses many tools like:
 - [Docker](https://www.docker.com/)
 - [Nginx](https://nginx.org)
 
+## Prerequisites
+Ensure you have the following installed on your local development machine:
+
+- Node.js (version 14 or later)
+- npm or yarn
+- pnpm
+- Docker
+
 ## Getting Started
 
 ### Install
@@ -32,6 +40,27 @@ Serve with hot reload at <http://localhost:5173>.
 
 ```bash
 pnpm run dev
+```
+### Routing 
+
+Uses Next.js-like routing:
+
+Create a new file in the src/app directory to add a new route.
+
+```arduino
+myapp/
+├── src/
+│   ├── app/
+|   |   ├── content
+|   |   |   ├── [id]
+|   |   |   |   ├── page.tsx // localhost:5173/content/[id]
+|   |   |   ├── page.tsx // localhost:5173/content
+│   │   ├── page.tsx // localhost:5173
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── ...
+├── package.json
+└── ...
 ```
 
 ### Lint
@@ -58,7 +87,7 @@ View and interact with your tests via UI.
 pnpm run test:ui
 ```
 
-## Docker
+### Docker
 
 Create a docker container and serve with Nginx
 ```bash
